@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="Fynn" on="12/11/19||20:59:00" using="Simscape Multibody Link Version 5.0" from="Autodesk Inventor 2020 (Build 240168000, 168)"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="centimeter"/>
+<RootAssembly name="ModelAssembly.iam" uid="ModelAssembly.iam_E4A5E1BC-4697-D14E-776D-E5A30248ACAF" version="{576F5270-1FF4-2563-C1F9-4952E0019E64}">
+<AssemblyFile name="ModelAssembly.iam" type="Inventor Assembly"/>
+<InstanceTree>
+<Instance name="Body:1" grounded="true" uid="Body:1" entityUid="Body.ipt_1E3C6E66-495E-8697-776A-CC9497657146">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-1.2843488458557373 0.14336917544346664 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Shoulder:1" uid="Shoulder:1" entityUid="Shoulder.ipt_B35874DD-4752-A988-C247-2C991AFA8AC4">
+<Transform>
+<Rotation>-3.7720351849443801e-016 -3.7929531083183171e-016 1 0.7051488669392455 0.70905928909668647 5.3492749712797503e-016 -0.70905928909668647 0.7051488669392455 0</Rotation>
+<Translation>23.715651154144279 -13.704165716473662 61.624943874500396</Translation>
+</Transform>
+</Instance>
+<Instance name="ForeArm:1" uid="ForeArm:1" entityUid="ForeArm.ipt_3282F2B2-4CC4-73E8-CE29-1A86BBCE81CD">
+<Transform>
+<Rotation>-0.35070544716045315 0.1648293575723826 0.9218660272589847 -0.88991756616166851 -0.36521284704442841 -0.27325135276992729 0.29163747147593871 -0.91621550916581795 0.27476667555426443</Rotation>
+<Translation>30.000675637212559 -19.482374605668557 30.020448367770975</Translation>
+</Transform>
+</Instance>
+<Instance name="UpperArm:1" uid="UpperArm:1" entityUid="Bauteil5.ipt_E8FBDF40-40EB-323C-E67C-C6AC4815066B">
+<Transform>
+<Rotation>0.92186602725898426 -3.165339852056344e-016 -0.38750874543129699 -0.27325135276992735 0.70905928909668647 -0.65005278459145655 0.27476667555426437 0.70514886693924561 0.65365766993064189</Rotation>
+<Translation>29.215651154144282 -23.964646653843857 40.024938524065654</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Passend:1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Shoulder:1</Uid>
+</InstancePath>
+<Position>8.080517931025561 11.49349138201751 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Body:1</Uid>
+</InstancePath>
+<Position>25.000000000000011 1.9539925233402755e-014 64</Position>
+<Axis>1 4.7369515717340002e-016 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Passend:2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Shoulder:1</Uid>
+</InstancePath>
+<Position>8.080517931025561 11.49349138201751 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Body:1</Uid>
+</InstancePath>
+<Position>25.000000000000014 -7.5000000000000018 0</Position>
+<Axis>1 4.7369515717340012e-016 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Passend:3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>UpperArm:1</Uid>
+</InstancePath>
+<Position>0 1.7763568394002505e-015 3.5527136788005009e-015</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Shoulder:1</Uid>
+</InstancePath>
+<Position>8.080517931025561 3.4934913820175097 5.5</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Passend:4">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>UpperArm:1</Uid>
+</InstancePath>
+<Position>0 30 3.5527136788005009e-015</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Shoulder:1</Uid>
+</InstancePath>
+<Position>8.080517931025561 7.4934913820175026 5.5000000000000036</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Passend:5">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>ForeArm:1</Uid>
+</InstancePath>
+<Position>6.2960480107209307 -8.3473005548099266 -7.1054273576010019e-015</Position>
+<Axis>2.3592239273284576e-016 -2.2204460492503131e-016 0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>UpperArm:1</Uid>
+</InstancePath>
+<Position>3.25 0.99999999999999467 -0.50876413275283383</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Passend:6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>UpperArm:1</Uid>
+</InstancePath>
+<Position>3.25 -1.7763568394002505e-015 5.6897064503951675</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ForeArm:1</Uid>
+</InstancePath>
+<Position>6.2960480107209307 -8.3473005548099231 6.5</Position>
+<Axis>-2.3592239273284576e-016 2.2204460492503131e-016 -0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Passend:7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Body:1</Uid>
+</InstancePath>
+<Position>1.0658141036401503e-014 -1.7763568394002505e-015 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Bauteil5.ipt" uid="Bauteil5.ipt_E8FBDF40-40EB-323C-E67C-C6AC4815066B" version="{CAD62C0F-3B06-9674-A15A-E6D75F64BDF3}">
+<PartFile name="Bauteil5.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>1.9407541172396496</Mass>
+<CenterOfMass>3.1331820980754609e-010 16.964942586886771 -0.0053531473718595474</CenterOfMass>
+<Inertia>128.05137765845853 25.704332303952206 129.53924263742741 -0.16586206836507594 -3.2478316665832095e-012 -3.4011089387503446e-009</Inertia>
+</MassProperties>
+<GeometryFile name="Bauteil5_ipt_7027d2f5.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Body.ipt" uid="Body.ipt_1E3C6E66-495E-8697-776A-CC9497657146" version="{C296F81F-6D80-8267-9BE4-736BE6C104FA}">
+<PartFile name="Body.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>52.923329610071178</Mass>
+<CenterOfMass>0.24396713514252222 -1.0998488066100556e-015 35.231968751441123</CenterOfMass>
+<Inertia>22777.640317754442 33124.38981945502 12318.092395729702 1.6745198080641496e-012 -371.43996324508083 -1.420075627640601e-014</Inertia>
+</MassProperties>
+<GeometryFile name="Body_ipt_cbdf38a3.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+<Part name="ForeArm.ipt" uid="ForeArm.ipt_3282F2B2-4CC4-73E8-CE29-1A86BBCE81CD" version="{E4144828-349C-6084-2C72-CCE8889CD891}">
+<PartFile name="ForeArm.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>1.8185073666948401</Mass>
+<CenterOfMass>-9.3212097681474688 -8.3473005548099248 3.2500000003757563</CenterOfMass>
+<Inertia>14.517200955030741 208.28883577442858 208.41539526602563 1.4551915228366852e-014 6.8382287281565372e-009 0</Inertia>
+</MassProperties>
+<GeometryFile name="ForeArm_ipt_fa8c35a5.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Shoulder.ipt" uid="Shoulder.ipt_B35874DD-4752-A988-C247-2C991AFA8AC4" version="{ADACCFAF-31D0-8700-FF8D-C1547CEF6002}">
+<PartFile name="Shoulder.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>1.3684826671931476</Mass>
+<CenterOfMass>8.0805179311378179 13.220748946869579 5.5000000000000062</CenterOfMass>
+<Inertia>29.915129673406657 43.289904381322977 45.853463327389967 -2.9103830456733704e-014 1.4551915228366852e-014 2.5876215659081936e-010</Inertia>
+</MassProperties>
+<GeometryFile name="Shoulder_ipt_4434d0d.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>
