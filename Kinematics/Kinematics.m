@@ -24,32 +24,40 @@ T_3 =[cos(theta3),-sin(theta3)*cosd(alpha3),sin(theta3)*sind(alpha3),a_3*cos(the
     0, 0, 0, 1];
 
 T_3_to_0 = T_1*T_2*T_3
-%% Plot 
+%% Robot Visualisation
 %%Kinematics of Arm
 fixPara = struct('d1',0.25,'d2',0.3,'d3',0,'a1',0,'a2',0,'a3',0.35,'alpha1',90,'alpha2',-90,'alpha3',0);
+baseTransform =[1,0,0,0;0,0,-1,0;0,1,0,0;0,0,0,1];
+L(1) = Link('d', fixPara.d1, 'a', fixPara.a1, 'alpha', deg2rad(fixPara.alpha1));
+L(2) = Link('d', fixPara.d2, 'a', fixPara.a2, 'alpha', deg2rad(fixPara.alpha2));
+L(3) = Link('d', fixPara.d3, 'a', fixPara.a3, 'alpha', deg2rad(fixPara.alpha3));
+robot = SerialLink(L,'base',baseTransform);
 
-theta1 = 50;
-theta2 = 60;
-theta3 = 20;
-q_soll = [theta1,theta2,theta3];
+%% Init
+theta1 = 0;
+theta2 = 0;
+theta3 = 0;
+q_ref = deg2rad([theta1,theta2,theta3]);
+%% Animation
+robot.plot(q_ref)
 
-T_1 =calcRotMatr(q_soll(1),fixPara.d1,fixPara.a1,fixPara.alpha1);
-T_2 =calcRotMatr(q_soll(2),fixPara.d2,fixPara.a2,fixPara.alpha2);
-T_3 =calcRotMatr(q_soll(3),fixPara.d3,fixPara.a3,fixPara.alpha3);
+y = (-0.4:0.01:0.5);
+x = ones(1,91)*0.4;
+z = ones(1,91)*0.25;
 
-T3to0 = T_1*T_2*T_3;
+for i = 1:91
+   q = calcJointCord([x(i);y(i);z(i)],fixPara);
+   robot.animate(deg2rad(q))
+end
 
-T1Origin=T_1*[0; 0;0;1];
-T2Origin=T_1*T_2*[0; 0;0;1];
-T3Origin=T3to0*[0; 0;0;1]
+%% Inverse kinematics by Jacobian (WIP)
 
-q_soll
-q = calcJointCord(T3Origin(1:3),fixPara)
-
-x = [0;T1Origin(1);T2Origin(1);T3Origin(1)];
-y = [0;T1Origin(2);T2Origin(2);T3Origin(2)];
-z = [0;T1Origin(3);T2Origin(3);T3Origin(3)];
-
-line(x,y,z)
-        
+%delta x = J(q)*delta q
+q_start = [0,0,0];
+robot.plot(deg2rad(q_start))
+q=q_start
+%%
+dq = pinv(calcJacobian(q,fixPara))*[0;0;0.1]
+q = q + dq.'
+robot.plot(deg2rad(q))
      
