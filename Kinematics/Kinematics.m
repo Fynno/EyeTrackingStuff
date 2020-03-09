@@ -31,7 +31,7 @@ baseTransform =[1,0,0,0;0,0,-1,0;0,1,0,0;0,0,0,1];
 L(1) = Link('d', fixPara.d1, 'a', fixPara.a1, 'alpha', deg2rad(fixPara.alpha1));
 L(2) = Link('d', fixPara.d2, 'a', fixPara.a2, 'alpha', deg2rad(fixPara.alpha2));
 L(3) = Link('d', fixPara.d3, 'a', fixPara.a3, 'alpha', deg2rad(fixPara.alpha3));
-robot = SerialLink(L,'base',baseTransform);
+robot = SerialLink(L,'base',baseTransform,'name','Right Arm');
 
 %% Init
 theta1 = 0;
@@ -41,11 +41,13 @@ q_ref = deg2rad([theta1,theta2,theta3]);
 %% Animation
 robot.plot(q_ref)
 
-y = (-0.4:0.01:0.5);
-x = ones(1,91)*0.4;
-z = ones(1,91)*0.25;
 
-for i = 1:91
+z = (0:0.01:0.5);
+%y = (-0.4:0.01:0.5);
+x = ones(1,length(z))*0.2;
+y = ones(1,length(z))*-0.1;
+
+for i = 1:length(z)
    q = calcJointCord([x(i);y(i);z(i)],fixPara);
    robot.animate(deg2rad(q))
 end
